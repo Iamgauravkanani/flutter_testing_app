@@ -23,13 +23,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            c1.increment();
-          });
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                c1.decrement();
+              });
+            },
+            child: Text("-1"),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                c1.increment();
+              });
+            },
+            child: Icon(Icons.add),
+          ),
+        ],
       ),
       appBar: AppBar(
         title: Text("Flutter Unit Testing"),
